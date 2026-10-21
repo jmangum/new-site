@@ -74,12 +74,194 @@
 
 						<!-- Research -->
 							<article id="research">
-								<h2 class="major">Research</h2>
+								<h1 class="major">Research</h1>
+								<h2 class="major">Research Interests</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
+								<p>
+									My research focuses on the study of the star formation process in the Universe, including the ISM, feedback, 
+									and galaxy evolution, using observations from ground- and space-based observatories. I am also the Editor-in-Chief 
+									for the Publications of the Astronomical Society of the Pacific (PASP).
+								</p>
+								<p>
+								    In the rest of this page I break down the projects I am currently working on.
+							    </p>
+							    <h2 class="major">Current Research Projects</h2>
+							    <p>
+								    Below is a list of my current research projects. Click on the titles for their details!
+							    </p>
+							
+							    <button type = "button" class = "collapsible">Star Formation in Galaxies</button>
+								<div class = "entry">
 
+									<div><h2>Testing the Physical Parameter Constraining Power of HCN and HNC With Neural Networks</h2></div>
+                                    <div><h3><a href="https://scixplorer.org/abs/2026ApJ...998..274B/abstract" style="display:block;float:left;">Behrens et al. 2026</a></h3></div><br>
+
+                                    <p>
+										In this article we have studied how well the J=1-0 through 4-3 transitions of HCN and HNC constrain the volume density, 
+									    molecular hydrogen column density, kinetic temperature, cosmic ray ionization rate, and beam filling factor within the 
+										Giant Molecular Cloud structures of the Central Molecular Zone of NGC253.  We use all combinations of HCN and HNC transitions 
+										to constrain chemical and radiative transfer models, and subsequently infer the gas conditions using a Bayesian nested sampling 
+										algorithm combined with neural network models for increased efficiency.  Specific recommendations for how well one can constrain 
+										physical conditions using HCN and HNC are derived.
+									</p>
+                                    <span class="image main"><img src="assets/img/Behrens2026Fig9.jpg" alt="Fractional difference between the test and control medians for each test combination as well as ratio of test to control uncertainty in the high n-zeta region for each physical parameter studied" width = "101.15%" height="auto"></span>
+
+										
+									    <p>
+									    	Understanding galaxy interaction is an incredibly challenging task. There are many different types of interaction (e.g. major interactions, wet interactions, coalescent mergers, etc.), which all affect galaxies differently. An example of a minor and
+										    a major interaction (respectively) is shown below. Interaction occurs over such large timescales (usually a few hundred megayears to a gigayear) that we cannot simply sit back and watch one unfold. Instead, we must observe
+										    many different interacting systems throughout the universe at different stages, and piece together the underlying processes at work from there. This investigation matters because our theories of
+										    galaxy evolution (<a href = "https://www.cosmotography.com/images/galaxy_formation_and_evolution.html">&Lambda; Cold Dark Matter</a>) hold that galaxies formed hierarchically — meaning a great deal of interaction and merging
+										    of galaxies to form those we see today.
+									    </p>
+									    <span class="image main"><img src="my_images/interaction-example.jpg" alt="Minor interaction NGC 5097 and major interaction Arp 240." width = "101.15%" height="auto"></span>
+									    <p>
+										    As we cannot watch these systems evolve naturally, we turn to simulations. There are three main types of simulation: magnetohydrodynamic, semi-analytic and numerical/N-body. Each has its own uses,
+										    but my focus is on using numerical simulations to constrain interacting galaxies. We approximate the disk of each galaxy using a finite number of massless particles, and place them in the combined gravitational potential of the two
+										    colliding galaxies. We then split the interaction into many discrete timesteps, calculating the forces on and velocities of each particle at each step to update its position. After running through all of the timesteps, the
+										    resulting particle distribution can resemble the actual distribution of our observed interacting galaxies. An example is shown below: our numerical simulation approximating the major interaction Arp 240, pictured above.
+									    </p>
+									    <span class="image main"><img src="my_images/obs-sim-comb.png" alt="Numerical simulation of Arp 240 interaction" width = "101.15%" height="auto"></span>
+									    <p>
+										    By imaging the position of each particle at every timestep, we can also create videos of the entire interaction.
+									    </p>
+									    <video width="500" height="auto" controls>
+										    <source src="videos/Arp_240_Video.mp4" type="video/mp4">
+									       Your browser does not support the video tag.
+									    </video>
+									    <p>
+										    The key takeaway from each of these simulations is that, to create them, we must estimate a host of underlying parameters for each galaxy. For example, to create the interaction above, we assumed that the primary and secondary galaxies had masses
+										    of 2.23&times;10<sup>12</sup>M<sub>&odot;</sub> and 2.16&times;10<sup>12</sup>M<sub>&odot;</sub> respectively. We also had to assume the 3D position of the secondary, the size of each galaxy, how fast they were moving, and their relative orientation to one another. So, by building a simulation that approximates the mass distribution
+										    of the interacting system, we can reasonably infer that the parameters used to create it are similar to the true underlying parameters of the real galaxies.
+									    </p>
+									    <p>
+									    	We take this a step further, however: we combine these numerical simulations of interacting galaxies, and their comparison to observations, with <a href = "https://en.wikipedia.org/wiki/Bayesian_statistics">Bayesian statistics</a>. Bayesian statistics lets us define a probability distribution for each parameter of the simulation — meaning we can not only find the best-fit parameters of an interacting system,
+										    but also quantify how likely that fit is to be correct. This lets us investigate whether multiple parameter combinations can produce the same system — so-called <a href = "https://www.statisticshowto.com/degenerate-distribution/">degeneracies</a> — and explore where these degeneracies arise and why. This will be an incredibly powerful approach, not just for interacting galaxies but for the formation mechanisms behind many
+										    different kinds of astrophysical systems.
+									    </p>
+									    <p>
+									    	This project, then, focuses on building a pipeline that can find the most likely parameters of many different interacting systems using numerical simulations.
+										    Once we can constrain these parameters across many systems with different characteristics, we will be able to explore the full impact of interaction on galaxy evolution
+										    in a quantifiable way.
+									    </p>
+								    </div>
+
+
+
+
+<div><h2>Neural Network Constraints of the Physical Parameters of the Central Molecular Zone of NGC253</h2></div>
+<div><h3><a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...977...38B/abstract" style="display:block;float:left;">Behrens et al. 2024</a></h3></div><br>
+
+<p>Using a neural network-based physical and chemical model of the NGC253 central molecular zone (CMZ), Behrens etal (2024) derived the physical conditions on 50pc scales.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/allParams_hexmap_noHatch_noHeatingSrcs.jpg" title="Neural network model constraints of the physical conditions in the NGC253 central molecular zone" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div><h2>Complex Organic Molecules Towards the Central Molecular Zone of NGC253</h2></div>
+<div><h3><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250419631B/abstract" style="display:block;float:left;">Bouvier et al. 2025</a></h3></div><br>
+
+<p>In Galactic star-forming (SF) regions, spatial variations of interstellar complex organic molecules (iCOMs) emission could reflect the source physical structure or different chemical formation pathways. Investigating iCOMs in extragalactic star formation regions may thus provide crucial information about these regions. As an active extragalactic star formation region, the central molecular zone (CMZ) of the nearby galaxy NGC 253 provides an ideal template for studying iCOMs under more extreme conditions. This study investigates the emission of a few selected iCOMs to characterize how the differences between iCOMs are influenced by the chemical and physical structure of the NGC253 CMZ.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/summary_icoms_v2.jpg" title="iCOMs schematic" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption" style="text-align: left;">
+    Schematic (not to scale) summarising the possible formation pathways and chemical links between iCOMs and their emission origins within a GMC.
+</div>
+
+<div><h2>Other articles that I have been involved with on this topic</h2></div>
+<ul>
+    <!--<li><a href="https://sites.google.com/view/alchemi/publications">The Complete ALCHEMI Large Program Publications List</a></li>-->
+    <li><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250407762D/abstract">Millimeter Emission from Supermassive Black Hole Coronae (del Palacio etal. 2025)</a></li>
+    <li><a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...689A.163L/abstract">The Fountain of the Luminous Infrared Galaxy Zw049.057 as traced by its OH Megamaser (Lankhaar etal. 2024)</a></li>
+    <li><a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...686A..48N/abstract">CON-quest. II. Spatially and Spectrally Resolved HCN/HCO+ Line Ratios in Local Luminous and Ultraluminous Infrared Galaxies (Nishimura etal. 2024)</a></li>
+</ul>
+
+
+
+
+
+
+
+								
+								<button type = "button" class = "collapsible">Robustly Detecting Mergers</button>
+									<div class = "entry">
+										<p>
+											As described in my previous research project, constraining galaxy interaction is a notoriously challenging task. Even recognising interacting galaxies in observations comes with its own issues. If we want to find distinct types of
+											objects in astrophysical observations, we typically turn to two kinds of classifiers: <a href = "https://en.wikipedia.org/wiki/Machine_learning">machine learning</a> (ML) or <a href = "https://www.theguardian.com/science/2012/mar/18/galaxy-zoo-crowdsourcing-citizen-scientists">citizen scientists</a>. We rely on these automated or delegated methods because of the sheer volume of
+											astrophysical objects being observed, with millions of sources potentially needing classification per night — far too many for a single researcher.
+										</p>
+										<p>
+											These automated and delegated methods work well for many different types of astrophysical object, except when it comes to interacting galaxies. The workhorse ML algorithm for classifying astrophysical sources is the
+											<a href = "https://www.ibm.com/uk-en/topics/convolutional-neural-networks">convolutional neural network</a>, or CNN — essentially an image identification algorithm. We train the CNN to recognise certain features of interacting galaxies (i.e. two galaxies
+											close together, tidal debris, tidal bridges, etc.), and it classifies anything with these features as interacting. However, our observations of interacting galaxies are only a two-dimensional projection of the actual
+											three-dimensional system. So a CNN might confidently flag two objects close together in 2D as interacting, when in 3D they are actually kilo- or mega-parsecs apart. The only way to know for certain that two galaxies are close
+											together in physical space is by knowing their <a href = "https://en.wikipedia.org/wiki/Redshift">redshift</a>. If they sit at similar redshifts and are close together in the plane of the sky, we know they are genuinely interacting gravitationally. An
+											example of a genuinely interacting pair of galaxies, alongside two that are simply close by projection (i.e. a close pair), is shown below.
+										</p>
+										<span class="image main"><img src="my_images/interacting-close-im.jpg" alt="An example of confirmed interacting galaxies and two galaxies close together by projection." width = "101.15%" height="auto"></span>
+										<p>
+											So why not just find the redshift of every galaxy we suspect might be interacting? Unfortunately, that's a non-trivial task — it requires extensive spectroscopic measurements, searching for
+											recognised elements in each galaxy. With tens of thousands of potentially interacting galaxies to confirm, this kind of observation and analysis quickly becomes unfeasible.
+										</p>
+										<p>
+											Other methods for inferring whether galaxies are interacting are currently under development. These often use the flux distribution of the galaxies, or naively estimate each galaxy's redshift by comparing it to simulated
+											disks. I'm working on using the shape of the systems alone to infer whether a galaxy is interacting. Using the <a href ="https://shapely.readthedocs.io/en/stable/manual.html">Shapely</a> Python package, it is possible to extract a polygon for each galaxy and then measure
+											how symmetric it is. Since interacting galaxies appear disturbed, and therefore asymmetric, we should be able to distinguish them from close pairs, which retain their symmetry.
+										</p>
+									</div>
+									
+								<button type = "button" class = "collapsible">Mergers in Galaxy Zoo: DESI</button>
+								<div class = "entry">
+									<p>
+										The <a href = "https://www.zooniverse.org/projects/zookeeper/galaxy-zoo/">Galaxy Zoo</a> collaboration has been running for nearly two decades. It is an online platform where volunteers classify images of galaxies by their morphology. These classifications range from
+										<a href = "https://en.wikipedia.org/wiki/Elliptical_galaxy">elliptical galaxies</a>, to <a href = "https://en.wikipedia.org/wiki/Disc_galaxy">disk galaxies</a>, to <a href = "https://esahubble.org/wordbank/spiral-galaxy/">spiral galaxies</a>, to disturbed galaxies, to even stars. Through this platform, millions of galaxies have been classified, giving astrophysicists
+										large, statistically robust samples of different galaxy types to explore and analyse.
+									</p>
+									<p>
+										The most recent data release of Galaxy Zoo is (or soon will be) Galaxy Zoo: Dark Energy Survey Instrument (DESI), containing nearly nine million deep images of galaxies at redshifts between 0 and 0.5. I, of course, am interested in the mergers and
+										disturbed systems in this latest release — in fact, it was the first classification tree to include a dedicated "Is the galaxy disturbed or merging?" question. This has let volunteers readily extract all of the
+										merging galaxies from the sample, split into "Not Disturbed", "Minor Disturbance", "Major Disturbance" and "Merger".
+									</p>
+									<span class="image main"><img src="my_images/desi-images.png" alt="A minorly, majorly disturbed and merging system from Galaxy Zoo: DESI." width = "101.15%" height="auto"></span>
+									<p>
+										From my early analysis, there are at least 200k merging or interacting (minor- or majorly disturbed) galaxies in the sample, with another 100k requiring further inspection. With such a large, statistically robust sample, I will explore the relationship between the
+										<a href = "https://en.wikipedia.org/wiki/CAS_parameters#:~:text=The%20CAS%20(concentration%2C%20asymmetry%2C,of%20the%20object%20under%20study.">CAS</a>, <a href = "https://photutils.readthedocs.io/en/stable/api/photutils.morphology.gini.html">GINI</a> and M<sub>20</sub> parameters of merging or interacting galaxies. For the development of these parameters, see <a href = "https://ui.adsabs.harvard.edu/abs/1994ApJ...432...75A/abstract">Abrahams et al. (1994, 1996)</a> and
+										<a href = "https://ui.adsabs.harvard.edu/abs/2004AJ....128..163L/abstract">Lotz et al. (2004)</a>. I will also use this sample to infer the merger rate across the observed redshift range, keeping in mind selection effects in Galaxy Zoo: DESI, and comment on new methods for identifying
+										interacting galaxies.
+									</p>
+								</div>
+	
+								<button type = "button" class = "collapsible">Star Formation in Mergers: Localisation</button>
+								<div class = "entry">
+									<p>
+										My final research project looks at star formation in interacting and merging galaxies. It is well known that interaction can, depending on the underlying parameters, lead a galaxy through a
+										<a href = "https://en.wikipedia.org/wiki/Starburst_galaxy">starburst</a> and eventual <a href = "https://en.wikipedia.org/wiki/Quenching_(astronomy)">quenching</a>. However, an open question remains as to where this intense star formation happens. Current theory holds that torques
+										exerted on the gas in the galaxy cause it to lose angular momentum, moving it towards the galaxy's centre. As the gas moves inward, its density increases to the point
+										where gravitational collapse of molecular clouds accelerates, and so does star formation. This inward movement of gas can also drive other effects on the galaxy, such as the <a href = "https://esahubble.org/wordbank/active-galactic-nucleus/">ignition of nuclear activity</a>.
+									</p>
+									<p>
+										However, this theoretical picture describes only one type of galaxy interaction: a major one. In such interactions, where the galaxies involved have close to equal mass, the torques are strong enough to drive the
+										processes described above. But if one galaxy is far less massive than the other (a minor interaction), or many orders of magnitude less massive (a micro interaction), the effects on the more massive galaxy (the primary) will barely be noticed. For the
+										less massive galaxy (the secondary), the results would be catastrophic — it would either be completely absorbed or destroyed by its more massive companion.
+									</p>
+									<p>
+										So where does star formation happen in these scenarios? Do we see an area of the primary galaxy where star formation is enhanced? Does the secondary's gas simply get split around the galaxy equally? Or do we see the same rush towards the
+										nuclear region as in the major-interaction case? All of this is without even considering the formation of tidal features, or the distortion and potential destruction of either galaxy's disk.
+									</p>
+									<p>
+										To answer this question, I aim to look for signs of star formation in interacting galaxies down to the sub-kpc scale. This should be achievable with the new <a href = "https://ingconfluence.ing.iac.es/confluence/display/WEAV/The+WEAVE+Project">William Herschel Telescope Enhanced Area Velocity Explorer</a>
+										(WEAVE) multi-object survey spectrograph. This new, colossal spectrograph can take measurements of different regions within a galaxy. By looking for elevated intensities of either H&alpha; (a sign of molecular gas over-density) or O[III] (a direct sign
+										of star formation) emission, we will be able to investigate where star formation is happening and whether it has been enhanced by the interaction or merger.
+									</p>
+								</div>
+								
+							</article>
 						<!-- Publications -->
 							<article id="publications">
 								<h2 class="major">Publications</h2>
